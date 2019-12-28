@@ -5,10 +5,11 @@ import "./SearchResults.scss";
 
 const SearchResults = ({ artistData, artistName, setShowEvents }) => {
   if (artistData) {
+    const { name } = artistData;
     return (
       <Container>
         <p className="search-title">
-          <strong>1</strong> Result found for "<strong>{artistName}</strong>"
+          <strong>1</strong> Result found for "<strong>{name}</strong>"
         </p>
         <div className="search-results">
           <ArtistInfo
@@ -24,7 +25,8 @@ const SearchResults = ({ artistData, artistName, setShowEvents }) => {
     return (
       <Container>
         <p className="search-title">
-          <strong>0</strong> Result found for "<strong>{artistName}</strong>"
+          <strong>0</strong> Result found for "
+          <strong>{localStorage.getItem("lastArtistSearched")}</strong>"
         </p>
       </Container>
     );

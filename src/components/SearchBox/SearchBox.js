@@ -20,7 +20,7 @@ const SearchBox = ({ artistName, setArtistName, setArtistData }) => {
           console.log(error);
         });
     }
-  });
+  }, []);
 
   const handleSubmit = e => {
     e.preventDefault();
