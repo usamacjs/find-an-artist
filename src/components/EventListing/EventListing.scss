@@ -1,0 +1,25 @@
+.back-to-results {
+  margin: 20px 0;
+  display: flex;
+  cursor: pointer;
+
+  img {
+    width: 10px;
+    margin-right: 7px;
+  }
+}
+
+.artist-data {
+  margin: 20px 0;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.eventlisting {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+  width: 100%;
+  margin: 20px 0;
+}
