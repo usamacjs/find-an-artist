@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Find An Artist",
+  "name": "Find an Artist and their events",
   "icons": [
     {
       "src": "favicon.ico",
