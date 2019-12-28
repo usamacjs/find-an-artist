@@ -4,7 +4,7 @@ import Container from "../Container/Container";
 import "./SearchResults.scss";
 
 const SearchResults = ({ artistData, artistName, setShowEvents }) => {
-  if (artistData) {
+  if (artistData && !artistData.error) {
     const { name } = artistData;
     return (
       <Container>
@@ -21,7 +21,7 @@ const SearchResults = ({ artistData, artistName, setShowEvents }) => {
       </Container>
     );
   }
-  if (artistData === "") {
+  if (artistData && (artistData === "" || artistData.error)) {
     return (
       <Container>
         <p className="search-title">
