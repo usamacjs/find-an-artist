@@ -48,7 +48,6 @@ const SearchBox = ({ artistName, setArtistName, setArtistData }) => {
             name="search"
             placeholder="Search artist"
             className="search-form__input"
-            value={lastArtistSearched && lastArtistSearched}
             onChange={handleChange}
             required
           />
