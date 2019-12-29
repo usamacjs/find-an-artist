@@ -12,7 +12,7 @@ const SearchResults = ({ artistData, artistName, setShowEvents }) => {
       <Container>
         <p className="search-title">
           <strong>1</strong> Result found for your last search "
-          <strong>{name}</strong>"
+          <strong>{lastArtistSearched}</strong>"
         </p>
         <div className="search-results">
           <ArtistInfo
