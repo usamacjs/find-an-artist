@@ -24,7 +24,10 @@ const SearchResults = ({ artistData, artistName, setShowEvents }) => {
       </Container>
     );
   }
-  if (artistData && (artistData == "" || artistData.error)) {
+  if (
+    lastArtistSearched ||
+    (artistData && (artistData == "" || artistData.error))
+  ) {
     return (
       <Container>
         <p className="search-title">
