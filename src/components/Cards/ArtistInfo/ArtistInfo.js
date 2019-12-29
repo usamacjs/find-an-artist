@@ -26,17 +26,17 @@ const ArtistInfo = ({ artistData, setShowEvents, showEventsButton }) => {
         <a href={facebook_page_url} target="_blank" rel="noopener noreferrer">
           Facebook Page
         </a>
+        {showEventsButton ? (
+          <button
+            className="artist-info__button"
+            onClick={() => {
+              setShowEvents(true);
+            }}
+          >
+            View Events
+          </button>
+        ) : null}
       </div>
-      {showEventsButton ? (
-        <button
-          className="artist-info__button"
-          onClick={() => {
-            setShowEvents(true);
-          }}
-        >
-          View Events
-        </button>
-      ) : null}
     </div>
   );
 };

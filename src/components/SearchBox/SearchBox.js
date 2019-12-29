@@ -33,7 +33,7 @@ const SearchBox = ({ artistName, setArtistName, setArtistData }) => {
         setArtistData(response.data);
       })
       .catch(function(error) {
-        console.log(error);
+        setArtistData(error);
       });
   };
   const handleChange = e => {

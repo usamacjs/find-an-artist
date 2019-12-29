@@ -10,13 +10,6 @@ function App() {
 
   return (
     <div>
-      {/* <button
-        onClick={() => {
-          setShowEvents(!showEvents);
-        }}
-      >
-        click
-      </button> */}
       {showEvents ? (
         <EventListing
           artistName={artistName}

@@ -36,8 +36,12 @@ const EventListing = ({ artistName, artistData, setShowEvents }) => {
               setShowEvents(false);
             }}
           >
-            <img src={BackIcon} alt="Back Icon" />
-            <p>Back To Results</p>
+            <p>
+              <span>
+                <img src={BackIcon} alt="Back Icon" />
+              </span>
+              Back To Results
+            </p>
           </div>
           <div className="artist-data">
             <ArtistInfo artistData={artistData} />

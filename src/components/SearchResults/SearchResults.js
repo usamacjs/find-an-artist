@@ -4,6 +4,7 @@ import Container from "../Container/Container";
 import "./SearchResults.scss";
 
 const SearchResults = ({ artistData, artistName, setShowEvents }) => {
+  const lastArtistSearched = localStorage.getItem("lastArtistSearched");
   if (artistData && !artistData.error) {
     const { name } = artistData;
     return (
@@ -26,7 +27,7 @@ const SearchResults = ({ artistData, artistName, setShowEvents }) => {
       <Container>
         <p className="search-title">
           <strong>0</strong> Result found for "
-          <strong>{localStorage.getItem("lastArtistSearched")}</strong>"
+          <strong>{lastArtistSearched && lastArtistSearched}</strong>"
         </p>
       </Container>
     );

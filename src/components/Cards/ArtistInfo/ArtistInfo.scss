@@ -21,27 +21,27 @@
 
   &__details {
     h1 {
-      margin-bottom: 5px;
+      margin-bottom: 10px;
     }
     a {
       opacity: 0.7;
       font-size: 12px;
+      display: block;
+      margin-bottom: 10px;
+      text-decoration: underline;
     }
 
     a:hover {
       opacity: 1;
     }
-  }
 
-  &__button {
-    font-size: 12px;
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-    background: #f7c900;
-    border-radius: 4px;
-    border: 0;
-    padding: 4px;
-    cursor: pointer;
+    button {
+      font-size: 12px;
+      background: #f7c900;
+      border-radius: 4px;
+      border: 0;
+      padding: 4px;
+      cursor: pointer;
+    }
   }
 }
