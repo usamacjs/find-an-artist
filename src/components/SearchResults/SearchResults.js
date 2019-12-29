@@ -37,7 +37,7 @@ const SearchResults = ({ artistData, artistName, setShowEvents }) => {
       </Container>
     );
   } else {
-    return null;
+    return <p>Something Went Wrong</p>;
   }
 };
 
