@@ -4,9 +4,15 @@ import Container from "../Container/Container";
 import SearchIcon from "../../assets/icons/search-icon.svg";
 import "./SearchBox.scss";
 
-const SearchBox = ({ artistName, setArtistName, setArtistData }) => {
+const SearchBox = ({
+  artistName,
+  setArtistName,
+  setArtistData,
+  setDataLoading
+}) => {
   const lastArtistSearched = localStorage.getItem("lastArtistSearched");
   useEffect(() => {
+    setDataLoading(true);
     if (lastArtistSearched) {
       setArtistName(lastArtistSearched);
       axios
@@ -14,9 +20,11 @@ const SearchBox = ({ artistName, setArtistName, setArtistData }) => {
           `https://rest.bandsintown.com/artists/${lastArtistSearched}?app_id=9c42d4dc9c1397201a4e3dc4d0bb840c`
         )
         .then(function(response) {
+          setDataLoading(false);
           setArtistData(response.data);
         })
         .catch(function(error) {
+          setDataLoading(false);
           setArtistData(error);
         });
     }
@@ -24,15 +32,18 @@ const SearchBox = ({ artistName, setArtistName, setArtistData }) => {
 
   const handleSubmit = e => {
     e.preventDefault();
+    setDataLoading(true);
     localStorage.setItem("lastArtistSearched", artistName);
     axios
       .get(
         `https://rest.bandsintown.com/artists/${artistName}?app_id=9c42d4dc9c1397201a4e3dc4d0bb840c`
       )
       .then(function(response) {
+        setDataLoading(false);
         setArtistData(response.data);
       })
       .catch(function(error) {
+        setDataLoading(false);
         setArtistData(error);
       });
   };
