@@ -3,6 +3,8 @@ import SearchBox from "./components/SearchBox/SearchBox";
 import EventListing from "./components/EventListing/EventListing";
 import SearchResults from "./components/SearchResults/SearchResults";
 
+import * as serviceWorker from "./serviceWorker";
+
 function App() {
   const [artistName, setArtistName] = useState();
   const [artistData, setArtistData] = useState();
@@ -34,5 +36,7 @@ function App() {
     </div>
   );
 }
+
+serviceWorker.register();
 
 export default App;
