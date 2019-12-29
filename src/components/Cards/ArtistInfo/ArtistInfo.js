@@ -14,7 +14,7 @@ const ArtistInfo = ({ artistData, setShowEvents, showEventsButton }) => {
               ? "https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif"
               : thumb_url
           }
-          alt=""
+          alt={name}
           onLoad={() => {
             setImageLoading(false);
           }}

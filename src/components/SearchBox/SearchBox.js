@@ -42,6 +42,7 @@ const SearchBox = ({ artistName, setArtistName, setArtistData }) => {
   return (
     <div className="search-box">
       <Container>
+        <h1>Find An Artist</h1>
         <form className="search-form" onSubmit={handleSubmit}>
           <input
             type="text"
