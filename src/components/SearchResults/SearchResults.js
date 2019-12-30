@@ -7,7 +7,6 @@ const SearchResults = ({ artistData, artistName, setShowEvents }) => {
   useEffect(() => {}, [artistData]);
   const lastArtistSearched = localStorage.getItem("lastArtistSearched");
   if (artistData && !artistData.error) {
-    const { name } = artistData;
     return (
       <Container>
         <p className="search-title">
@@ -26,7 +25,7 @@ const SearchResults = ({ artistData, artistName, setShowEvents }) => {
   }
   if (
     lastArtistSearched ||
-    (artistData && (artistData == "" || artistData.error))
+    (artistData && (artistData === "" || artistData.error))
   ) {
     return (
       <Container>

@@ -1,7 +1,7 @@
 import React, { Suspense } from "react";
 import ReactDOM from "react-dom";
 import Spinner from "./components/Spinner/Spinner";
-import "./index.css";
+import "./index.scss";
 import * as serviceWorker from "./serviceWorker";
 
 const App = React.lazy(() => import("./App"));

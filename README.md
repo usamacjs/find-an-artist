@@ -23,7 +23,7 @@ Builds the app for production to the `build` folder.<br />
 
 ## About the app and my approach
 
-It is an app that allows users to search artists and their upcoming events. 
+It is a React app that allows users to search artists and their upcoming events. 
 
 I have kept the layout very simple, sticking to the wireframes provided. Although I did add some colors and styling of my own to make the app look more lively.
 
