@@ -10,7 +10,7 @@ function App() {
   const [artistName, setArtistName] = useState();
   const [artistData, setArtistData] = useState();
   const [showEvents, setShowEvents] = useState(false);
-  const [dataLoading, setDataLoading] = useState(true);
+  const [dataLoading, setDataLoading] = useState(false);
 
   return (
     <div>

@@ -12,8 +12,8 @@ const SearchBox = ({
 }) => {
   const lastArtistSearched = localStorage.getItem("lastArtistSearched");
   useEffect(() => {
-    setDataLoading(true);
     if (lastArtistSearched) {
+      setDataLoading(true);
       setArtistName(lastArtistSearched);
       axios
         .get(
@@ -25,7 +25,7 @@ const SearchBox = ({
         })
         .catch(function(error) {
           setDataLoading(false);
-          setArtistData(error);
+          setArtistData({ error: error });
         });
     }
   }, []);
@@ -44,7 +44,7 @@ const SearchBox = ({
       })
       .catch(function(error) {
         setDataLoading(false);
-        setArtistData(error);
+        setArtistData({ error: error });
       });
   };
   const handleChange = e => {
