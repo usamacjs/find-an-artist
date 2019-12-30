@@ -37,7 +37,7 @@ For making the API calls I used a package called axios since I have been using i
 
 Jest and Enzyme were used to write some basic tests for this application.
 
-#Bonus Features
+##Bonus Features
 
 The most recent artist searched is presisted in the memory using Windows Local Storage. So even if your reload the browser, You can still see your last serched artist and his/her upcoming events.
 
