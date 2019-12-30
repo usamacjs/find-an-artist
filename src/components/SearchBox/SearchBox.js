@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Container from "../Container/Container";
 import SearchIcon from "../../assets/icons/search-icon.svg";
@@ -11,6 +11,8 @@ const SearchBox = ({
   setDataLoading
 }) => {
   const lastArtistSearched = localStorage.getItem("lastArtistSearched");
+  const [userInput, setUserInput] = useState({ input: "", error: "" });
+
   useEffect(() => {
     if (lastArtistSearched) {
       setDataLoading(true);
@@ -32,23 +34,29 @@ const SearchBox = ({
 
   const handleSubmit = e => {
     e.preventDefault();
-    setDataLoading(true);
-    localStorage.setItem("lastArtistSearched", artistName);
-    axios
-      .get(
-        `https://rest.bandsintown.com/artists/${artistName}?app_id=9c42d4dc9c1397201a4e3dc4d0bb840c`
-      )
-      .then(function(response) {
-        setDataLoading(false);
-        setArtistData(response.data);
-      })
-      .catch(function(error) {
-        setDataLoading(false);
-        setArtistData({ error: error });
-      });
+
+    if (userInput.input !== "") {
+      setDataLoading(true);
+      localStorage.setItem("lastArtistSearched", artistName);
+      axios
+        .get(
+          `https://rest.bandsintown.com/artists/${artistName}?app_id=9c42d4dc9c1397201a4e3dc4d0bb840c`
+        )
+        .then(function(response) {
+          setDataLoading(false);
+          setArtistData(response.data);
+        })
+        .catch(function(error) {
+          setDataLoading(false);
+          setArtistData({ error: error });
+        });
+    } else {
+      setUserInput({ ...userInput, error: "Search input must not be empty!" });
+    }
   };
   const handleChange = e => {
     setArtistName(e.target.value);
+    setUserInput({ ...userInput, input: e.target.value, error: "" });
   };
   return (
     <div className="search-box">
@@ -61,12 +69,16 @@ const SearchBox = ({
             placeholder="Search artist"
             className="search-form__input"
             onChange={handleChange}
-            required
           />
           <button type="submit" className="search-form__button">
             <img src={SearchIcon} alt="Search Icon" />
           </button>
         </form>
+        {userInput.error !== "" ? (
+          <p className="search-box__error">{userInput.error}</p>
+        ) : (
+          <p className="search-box__error">{userInput.error}</p>
+        )}
       </Container>
     </div>
   );
